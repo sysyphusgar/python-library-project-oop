@@ -1,53 +1,30 @@
-class Libro:  
-    def __init__(self, titulo, autor, isbn, disponible=True):
-        self.titulo = titulo
-        self.autor = autor
-        self.isbn = isbn
-        self.disponible = disponible
-        self.__veces_prestado = 0 # el doble __ hace que la variable sea privada (encapsulacion), y mantenga integridad de datos
+from biblioteca import Biblioteca
+from libros import Libro
+from usuarios import Estudiante, Profesor, SolicitanteProtocol
 
-    def __str__(self):
-        return f"{self.titulo} por {self.autor}, ISBN: {self.isbn}, Disponible: {self.disponible}"
+estudiante1 = Estudiante("Juan", "324324234", "Sistemas")
+estudiante2 = Estudiante("Felipe", "840394324", "Psicologia")
+profesor1 = Profesor("Erick", "114473484")
 
-    def prestar(self):
-        if self.disponible:
-            self.disponible = False
-            self.__veces_prestado += 1
-            return f"{self.titulo} prestado exitosamente. Total prestamos: {self.__veces_prestado}"
-        return f"{self.titulo} no esta disponible"
+usuarios: list[SolicitanteProtocol] = [estudiante1, estudiante2, profesor1]
 
-    def devolver(self):
-        self.disponible = True
-        return f"{self.titulo} devuelto y disponible nuevamente."
-    
-    def es_popular(self):
-        return self.__veces_prestado > 5
-    
-    def get_veces_prestado(self): # getter
-        return self.__veces_prestado
-    
-    def set_veces_prestado(self, veces_prestado):  # setter
-        self.__veces_prestado = veces_prestado
+for usuario in usuarios:
+    print(usuario.solicitar_libro("Titulo de ejemplo"))
 
+
+mi_libro_no_disponible = LibroFisico(
+    "Alicia en el Pais de las Maravillas",
+    "Lewis Carroll",
+    "98985435435",
+    False
+)
 
 mi_libro = Libro("Cien Años de Soledad", "Gabriel García Márquez", "978-3-16-148410-0", True)
 otro_libro = Libro("El Principito", "Antoine de Saint-Exupéry", "978-0-14-310502-9", True)
+libro_fisico1 = LibroFisico("La era del capitalismo de la Vigilancia", "Shoshana Zuboff", "46554564")
+libro_digital1 = LibroDigital("El Extranjero", "Albert Camus", "5646456465", False)
 
-otro_libro.set_veces_prestado(10) # modifica valores de veces prestado de manera adecuada, manteniendo integridad de datos
+biblioteca = Biblioteca("Platzi Biblioteca")
+biblioteca.libros = [ mi_libro, otro_libro, mi_libro_no_disponible, libro_digital1]
+print(biblioteca.libros_disponibles())
 
-print(otro_libro.get_veces_prestado())
-
-for i in range(6):
-    otro_libro.prestar()
-    otro_libro.devolver()
-
-print(otro_libro.prestar())
-
-
-# print(f"mi_libro: {mi_libro.titulo} por {mi_libro.autor}")
-# print(f"otro_libro: {otro_libro.titulo} por {otro_libro.autor}")
-
-catalogo = [mi_libro, otro_libro]
-
-for i in catalogo:
-    print(i)
