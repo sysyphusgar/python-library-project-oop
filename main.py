@@ -1,30 +1,34 @@
-from biblioteca import Biblioteca
-from libros import Libro
-from usuarios import Estudiante, Profesor, SolicitanteProtocol
+from library import Library
+from data import students_data, books_data
+from exceptions import NoAvailableBookError, NoAvailableUserError
+from users import Profesor
 
-estudiante1 = Estudiante("Juan", "324324234", "Sistemas")
-estudiante2 = Estudiante("Felipe", "840394324", "Psicologia")
+library = Library("Personal Library")
 profesor1 = Profesor("Erick", "114473484")
 
-usuarios: list[SolicitanteProtocol] = [estudiante1, estudiante2, profesor1]
+library.users = students_data + [profesor1]
+library.books = books_data
 
-for usuario in usuarios:
-    print(usuario.solicitar_libro("Titulo de ejemplo"))
+print("Welcome to my Library")
 
+print("Available books: ")
+for title in library.available_books():
+    print(f"  - {title}")
+print()
 
-mi_libro_no_disponible = LibroFisico(
-    "Alicia en el Pais de las Maravillas",
-    "Lewis Carroll",
-    "98985435435",
-    False
-)
+id = input("Type your id: ")
 
-mi_libro = Libro("Cien Años de Soledad", "Gabriel García Márquez", "978-3-16-148410-0", True)
-otro_libro = Libro("El Principito", "Antoine de Saint-Exupéry", "978-0-14-310502-9", True)
-libro_fisico1 = LibroFisico("La era del capitalismo de la Vigilancia", "Shoshana Zuboff", "46554564")
-libro_digital1 = LibroDigital("El Extranjero", "Albert Camus", "5646456465", False)
+try:
+    user = library.search_user(id)
+    print(user.id, user.name)
+except NoAvailableUserError as e:
+    print("The user you are looking for does not exist")
+    print(e)
 
-biblioteca = Biblioteca("Platzi Biblioteca")
-biblioteca.libros = [ mi_libro, otro_libro, mi_libro_no_disponible, libro_digital1]
-print(biblioteca.libros_disponibles())
-
+title = input("Type the title of the book you want to search: ")
+try:
+    book = library.search_book(title)
+    print(f"The book you selected is: {book}")
+except NoAvailableBookError as e:
+    print("The book you are looking for does not exist")
+    print(e)

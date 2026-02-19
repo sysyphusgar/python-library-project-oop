@@ -1,7 +1,7 @@
 [project]
 name = "python-poo"
 version = "0.1.0"
-description = "project biblioteca"
+description = "library project"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = []

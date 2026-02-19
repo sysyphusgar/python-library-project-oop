@@ -1,5 +1,5 @@
-from libros import LibroFisico
-from usuarios import Estudiante
+from books import PhysicalBook
+from users import Student
 
 # Creación de 10 libros físicos con diferentes títulos y autores
 
