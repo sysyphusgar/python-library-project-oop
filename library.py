@@ -2,13 +2,14 @@ import data
 from exceptions import NoAvailableBookError, NoAvailableUserError
 
 class Library:
-    def __init__(self, name) -> None:
+    def __init__(self, name: str) -> None:
         self.name = name
         self.books = []
         self.users = []
 
+    @property
     def available_books(self):
-        return [book.title for libro in self.books if book.available]
+        return [book for book in self.books if book.available]
 
     def search_user(self, id):
         for user in self.users:
@@ -17,7 +18,11 @@ class Library:
         raise NoAvailableUserError(f"User with id {id} was not found")
     
     def search_book(self, title):
-        for libro in self.books:
+        for book in self.books:
             if book.title == title and book.available:
-                return libro
+                return book
         raise NoAvailableBookError(f"The book with title {title} is not available")
+    
+    @staticmethod # does not operate on an instance
+    def isbn_validation(isbn):
+        return len(isbn) >= 10

@@ -1,0 +1,154 @@
+{
+    "name": "Personal Library vs2",
+    "users": [
+        {
+            "name": "Juan",
+            "id": "324324234",
+            "borrowed_books": [],
+            "career": "Computer Science",
+            "books_limit": 3
+        },
+        {
+            "name": "Felipe",
+            "id": "840394324",
+            "borrowed_books": [],
+            "career": "Psychology",
+            "books_limit": 3
+        },
+        {
+            "name": "Maria",
+            "id": "123456789",
+            "borrowed_books": [],
+            "career": "Law",
+            "books_limit": 3
+        },
+        {
+            "name": "Ana",
+            "id": "987654321",
+            "borrowed_books": [],
+            "career": "Medicine",
+            "books_limit": 3
+        },
+        {
+            "name": "Luis",
+            "id": "555555555",
+            "borrowed_books": [],
+            "career": "Architecture",
+            "books_limit": 3
+        },
+        {
+            "name": "Sofia",
+            "id": "111111111",
+            "borrowed_books": [],
+            "career": "Economics",
+            "books_limit": 3
+        },
+        {
+            "name": "Carlos",
+            "id": "222222222",
+            "borrowed_books": [],
+            "career": "Engineering",
+            "books_limit": 3
+        },
+        {
+            "name": "Laura",
+            "id": "333333333",
+            "borrowed_books": [],
+            "career": "Psychology",
+            "books_limit": 3
+        },
+        {
+            "name": "Diego",
+            "id": "444444444",
+            "borrowed_books": [],
+            "career": "Systems",
+            "books_limit": 3
+        },
+        {
+            "name": "Valentina",
+            "id": "666666666",
+            "borrowed_books": [],
+            "career": "Law",
+            "books_limit": 3
+        },
+        {
+            "name": "Erick",
+            "id": "114473484",
+            "borrowed_books": [],
+            "books_limit": null
+        }
+    ],
+    "books": [
+        {
+            "title": "Cien Años de Soledad",
+            "author": "Gabriel García Márquez",
+            "isbn": "978-3-16-148410-0",
+            "available": true,
+            "_Book__times_loaned": 0
+        },
+        {
+            "title": "Alice in Wonderland",
+            "author": "Lewis Carroll",
+            "isbn": "98985435435",
+            "available": true,
+            "_Book__times_loaned": 0
+        },
+        {
+            "title": "El Principito",
+            "author": "Antoine de Saint-Exupéry",
+            "isbn": "978-0-14-310502-9",
+            "available": true,
+            "_Book__times_loaned": 0
+        },
+        {
+            "title": "Don Quijote de la Mancha",
+            "author": "Miguel de Cervantes",
+            "isbn": "978-0-14-243723-0",
+            "available": true,
+            "_Book__times_loaned": 0
+        },
+        {
+            "title": "La Sombra del Viento",
+            "author": "Carlos Ruiz Zafón",
+            "isbn": "978-0-14-303490-2",
+            "available": true,
+            "_Book__times_loaned": 0
+        },
+        {
+            "title": "El Alquimista",
+            "author": "Paulo Coelho",
+            "isbn": "978-0-06-112241-5",
+            "available": true,
+            "_Book__times_loaned": 0
+        },
+        {
+            "title": "1984",
+            "author": "George Orwell",
+            "isbn": "978-0-452-28423-4",
+            "available": true,
+            "_Book__times_loaned": 0
+        },
+        {
+            "title": "El Gran Gatsby",
+            "author": "F. Scott Fitzgerald",
+            "isbn": "978-0-7432-7356-5",
+            "available": true,
+            "_Book__times_loaned": 0
+        },
+        {
+            "title": "To Kill a Mockingbird",
+            "author": "Harper Lee",
+            "isbn": "978-0-06-112008-4",
+            "available": true,
+            "_Book__times_loaned": 0
+        },
+        {
+            "title": "El Código Da Vinci",
+            "author": "Dan Brown",
+            "isbn": "978-0-385-50420-8",
+            "available": true,
+            "_Book__times_loaned": 0
+        }
+    ],
+    "date_saved": "2026-05-01T12:03:52.684795"
+}
